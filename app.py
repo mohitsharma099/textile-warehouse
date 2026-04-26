@@ -1,4 +1,15 @@
 import streamlit as st
+
+# Custom CSS to hide the GitHub icon and the hamburger menu
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            .viewerBadge_container__1QSob {display: none !important;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 import json
 import os
 
