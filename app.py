@@ -23,6 +23,11 @@ with col1:
         st.session_state.sidebar_hidden = not st.session_state.sidebar_hidden
         st.rerun()
 
+# Display current sidebar status
+with st.sidebar:
+    st.write("### ✅ Sidebar is Visible")
+    st.write("Click the '☰' in top-left or press Ctrl+Shift+S to hide/show")
+
 # ==========================================
 # CONFIGURATION & PERSISTENCE
 # ==========================================
