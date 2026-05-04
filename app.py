@@ -1,8 +1,27 @@
 import streamlit as st
 import json
-import os
 import uuid
+import os  # You're missing this import too!
 from datetime import datetime
+
+# CONFIGURATION & PERSISTENCE
+st.set_page_config(
+    page_title="Nexus Textile ERP",
+    page_icon="📦",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# ADD THIS: A manual sidebar toggle button in the main area
+# This creates a button that users can click if the sidebar disappears
+col1, col2, col3 = st.columns([1, 10, 1])
+with col1:
+    if st.button("☰ Show/Hide Sidebar", key="toggle_sidebar_btn"):
+        # This toggles the sidebar using session state
+        if "sidebar_hidden" not in st.session_state:
+            st.session_state.sidebar_hidden = False
+        st.session_state.sidebar_hidden = not st.session_state.sidebar_hidden
+        st.rerun()
 
 # ==========================================
 # CONFIGURATION & PERSISTENCE
