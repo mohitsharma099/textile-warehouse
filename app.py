@@ -7,8 +7,12 @@ from datetime import datetime
 # ==========================================
 # CONFIGURATION & PERSISTENCE
 # ==========================================
-st.set_page_config(page_title="Nexus Textile ERP", page_icon="🏭", layout="wide")
-
+st.set_page_config(
+    page_title="Nexus Textile ERP", 
+    page_icon="🧵", 
+    layout="wide",
+    initial_sidebar_state="expanded"  # This forces the sidebar to show up
+)
 DATA_FILE = "erp_data.json"
 
 def load_data():
